@@ -17,6 +17,14 @@
 @implementation TicTacToeGameModel
 @synthesize gameState;
 
+- (id)init {
+	if(self = [super init]){
+		self.gameState = STATE_CROSS_TURN;
+		[self resetBoard];
+	}
+	return self;
+}
+
 - (IconType) getMarkInRow:(int) aRow column:(int) aColumn {
 	if (aRow >= NUM_ROWS || aColumn >= NUM_COLS || aRow < 0 || aColumn < 0) {
 		return TYPE_EMPTY;
