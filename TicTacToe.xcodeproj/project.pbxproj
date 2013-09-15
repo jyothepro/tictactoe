@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321FB9E417E4025E00E6F465 /* TicTacToeGameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 321FB9E317E4025E00E6F465 /* TicTacToeGameModel.m */; };
+		321FB9E817E4ED7800E6F465 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9E617E4ED7800E6F465 /* board.png */; };
+		321FB9E917E4ED7800E6F465 /* board@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9E717E4ED7800E6F465 /* board@2x.png */; };
+		321FB9F017E4FAFC00E6F465 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9EE17E4FAFC00E6F465 /* cross.png */; };
+		321FB9F117E4FAFC00E6F465 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9EF17E4FAFC00E6F465 /* cross@2x.png */; };
+		321FB9F417E4FC8200E6F465 /* nought.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9F217E4FC8200E6F465 /* nought.png */; };
+		321FB9F517E4FC8200E6F465 /* nought@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9F317E4FC8200E6F465 /* nought@2x.png */; };
+		321FB9F817E5371F00E6F465 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321FB9F717E5371F00E6F465 /* Crashlytics.framework */; };
 		32FCED7E17E3FB4C00F1CBC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FCED7D17E3FB4C00F1CBC4 /* UIKit.framework */; };
 		32FCED8017E3FB4C00F1CBC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FCED7F17E3FB4C00F1CBC4 /* Foundation.framework */; };
 		32FCED8217E3FB4C00F1CBC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FCED8117E3FB4C00F1CBC4 /* CoreGraphics.framework */; };
@@ -21,6 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321FB9E217E4025E00E6F465 /* TicTacToeGameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacToeGameModel.h; sourceTree = "<group>"; };
+		321FB9E317E4025E00E6F465 /* TicTacToeGameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacToeGameModel.m; sourceTree = "<group>"; };
+		321FB9E617E4ED7800E6F465 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
+		321FB9E717E4ED7800E6F465 /* board@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "board@2x.png"; sourceTree = "<group>"; };
+		321FB9EE17E4FAFC00E6F465 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		321FB9EF17E4FAFC00E6F465 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		321FB9F217E4FC8200E6F465 /* nought.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nought.png; sourceTree = "<group>"; };
+		321FB9F317E4FC8200E6F465 /* nought@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nought@2x.png"; sourceTree = "<group>"; };
+		321FB9F717E5371F00E6F465 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		32FCED7A17E3FB4C00F1CBC4 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32FCED7D17E3FB4C00F1CBC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		32FCED7F17E3FB4C00F1CBC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,12 +64,26 @@
 				32FCED7E17E3FB4C00F1CBC4 /* UIKit.framework in Frameworks */,
 				32FCED8017E3FB4C00F1CBC4 /* Foundation.framework in Frameworks */,
 				32FCED8217E3FB4C00F1CBC4 /* CoreGraphics.framework in Frameworks */,
+				321FB9F817E5371F00E6F465 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321FB9E517E4ED5D00E6F465 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				321FB9F217E4FC8200E6F465 /* nought.png */,
+				321FB9F317E4FC8200E6F465 /* nought@2x.png */,
+				321FB9EE17E4FAFC00E6F465 /* cross.png */,
+				321FB9EF17E4FAFC00E6F465 /* cross@2x.png */,
+				321FB9E617E4ED7800E6F465 /* board.png */,
+				321FB9E717E4ED7800E6F465 /* board@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		32FCED7117E3FB4C00F1CBC4 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +104,7 @@
 		32FCED7C17E3FB4C00F1CBC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				321FB9F717E5371F00E6F465 /* Crashlytics.framework */,
 				32FCED7D17E3FB4C00F1CBC4 /* UIKit.framework */,
 				32FCED7F17E3FB4C00F1CBC4 /* Foundation.framework */,
 				32FCED8117E3FB4C00F1CBC4 /* CoreGraphics.framework */,
@@ -83,12 +115,15 @@
 		32FCED8317E3FB4C00F1CBC4 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				321FB9E517E4ED5D00E6F465 /* Assets */,
 				32FCED8C17E3FB4C00F1CBC4 /* TicTacToeAppDelegate.h */,
 				32FCED8D17E3FB4C00F1CBC4 /* TicTacToeAppDelegate.m */,
 				32FCED9517E3FB4C00F1CBC4 /* TicTacToeViewController.h */,
 				32FCED9617E3FB4C00F1CBC4 /* TicTacToeViewController.m */,
 				32FCED9817E3FB4C00F1CBC4 /* TicTacToeViewController.xib */,
 				32FCED8417E3FB4C00F1CBC4 /* Supporting Files */,
+				321FB9E217E4025E00E6F465 /* TicTacToeGameModel.h */,
+				321FB9E317E4025E00E6F465 /* TicTacToeGameModel.m */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -117,6 +152,7 @@
 				32FCED7617E3FB4C00F1CBC4 /* Sources */,
 				32FCED7717E3FB4C00F1CBC4 /* Frameworks */,
 				32FCED7817E3FB4C00F1CBC4 /* Resources */,
+				321FB9F617E536DC00E6F465 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -164,10 +200,32 @@
 				32FCED9217E3FB4C00F1CBC4 /* Default@2x.png in Resources */,
 				32FCED9417E3FB4C00F1CBC4 /* Default-568h@2x.png in Resources */,
 				32FCED9A17E3FB4C00F1CBC4 /* TicTacToeViewController.xib in Resources */,
+				321FB9E817E4ED7800E6F465 /* board.png in Resources */,
+				321FB9E917E4ED7800E6F465 /* board@2x.png in Resources */,
+				321FB9F017E4FAFC00E6F465 /* cross.png in Resources */,
+				321FB9F117E4FAFC00E6F465 /* cross@2x.png in Resources */,
+				321FB9F417E4FC8200E6F465 /* nought.png in Resources */,
+				321FB9F517E4FC8200E6F465 /* nought@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		321FB9F617E536DC00E6F465 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 86f997e02c686dc5092d6366365f5e8adb2af0b3";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32FCED7617E3FB4C00F1CBC4 /* Sources */ = {
@@ -177,6 +235,7 @@
 				32FCED8A17E3FB4C00F1CBC4 /* main.m in Sources */,
 				32FCED8E17E3FB4C00F1CBC4 /* TicTacToeAppDelegate.m in Sources */,
 				32FCED9717E3FB4C00F1CBC4 /* TicTacToeViewController.m in Sources */,
+				321FB9E417E4025E00E6F465 /* TicTacToeGameModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +320,10 @@
 		32FCED9E17E3FB4C00F1CBC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TicTacToe/TicTacToe-Prefix.pch";
 				INFOPLIST_FILE = "TicTacToe/TicTacToe-Info.plist";
@@ -272,6 +335,10 @@
 		32FCED9F17E3FB4C00F1CBC4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TicTacToe/TicTacToe-Prefix.pch";
 				INFOPLIST_FILE = "TicTacToe/TicTacToe-Info.plist";
@@ -299,6 +366,7 @@
 				32FCED9F17E3FB4C00F1CBC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
