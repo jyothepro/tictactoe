@@ -7,7 +7,7 @@
 //
 
 #import "TicTacToeAppDelegate.h"
-
+#import <Crashlytics/Crashlytics.h>
 #import "TicTacToeViewController.h"
 
 @implementation TicTacToeAppDelegate
@@ -16,6 +16,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+	[Crashlytics startWithAPIKey:@"86f997e02c686dc5092d6366365f5e8adb2af0b3"];
 	self.viewController = [[TicTacToeViewController alloc] initWithNibName:@"TicTacToeViewController" bundle:nil];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
