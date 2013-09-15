@@ -39,6 +39,51 @@
 	[self configureGame];
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion
+		  withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        [self showSkillLevelActionSheet];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	NSLog(@"Button Index : %d", buttonIndex);
+	switch (buttonIndex) {
+		case 0:
+			[_game setSkillLevel:SKILL_NOVICE];
+			break;
+			
+		case 1:
+			[_game setSkillLevel:SKILL_AVERAGE];
+			break;
+		case 2:
+			[_game setSkillLevel:SKILL_EXPERT];
+			break;
+			
+		default:
+			break;
+	}
+	
+}
+
+-(void)showSkillLevelActionSheet {
+	NSString *actionSheetTitle = @"Change the skill level";
+	NSString *btn1 = @"Novice";
+	NSString *btn2 = @"Average";
+	NSString *btn3 = @"Expert";
+	NSString *cancelTitle = @"Cancel";
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle: actionSheetTitle
+															 delegate: self
+													cancelButtonTitle: cancelTitle
+											   destructiveButtonTitle: nil
+													otherButtonTitles: btn1, btn2, btn3, nil];
+	[actionSheet showInView:self.view];
+}
+
 -(void) addTouchToView:(UIImageView *) img {
 	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
     [img addGestureRecognizer:tap];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TicTacToeViewController : UIViewController
+@interface TicTacToeViewController : UIViewController<UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *gameState;
 @property (weak, nonatomic) IBOutlet UIButton *startNewGameBtn;

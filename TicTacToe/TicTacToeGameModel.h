@@ -17,6 +17,12 @@ typedef enum {
 } IconType;
 
 typedef enum {
+	SKILL_NOVICE = 0,
+	SKILL_AVERAGE = 2,
+	SKILL_EXPERT = 100,
+} SkillLevel;
+
+typedef enum {
 	STATE_CROSS_TURN,
 	STATE_NOUGHT_TURN,
 	STATE_CROSS_WON,
@@ -35,5 +41,6 @@ typedef enum {
 - (BOOL) playerPressedRow:(int) aRow column:(int) aColumn;
 - (BOOL) resetBoard;
 - (int) iPhoneMove;
+- (void) setSkillLevel:(SkillLevel) val;
 
 @end

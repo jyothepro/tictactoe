@@ -13,17 +13,24 @@
 - (void) _checkForWinner;
 - (BOOL) _didWin:(IconType) iconType;
 - (BOOL) _isBoardFull;
+@property (nonatomic) SkillLevel skillLevel;
 @end
 
 @implementation TicTacToeGameModel
 @synthesize gameState;
+@synthesize skillLevel = _skillLevel;
 
 - (id)init {
 	if(self = [super init]){
 		self.gameState = STATE_CROSS_TURN;
 		[self resetBoard];
+		[self setSkillLevel:SKILL_AVERAGE];
 	}
 	return self;
+}
+
+- (void) setSkillLevel:(SkillLevel) val {
+	_skillLevel = val;
 }
 
 - (IconType) getMarkInRow:(int) aRow column:(int) aColumn {
@@ -94,8 +101,96 @@
 	int countCross = 0;
 	int countEmpty = 0;
 	
-	//TODO:Add Probability to block a winning move
+	//Probability to block a winning move
+	if (arc4random_uniform(_skillLevel)) {
+		NSLog(@"Block Winning Move");
+		//Block a winning move for the opponent
+		int blockWinningMove = [self blockOpponentWinningMove];
+		if (blockWinningMove) {
+			return blockWinningMove;
+		}
+	}
+	
+	
+	
+	// Check for up diagonal win
+	countCross = 0;
+	countEmpty = 0;
+	for (int i=0; i<NUM_ROWS; i++) {
+		if (gameBoard[NUM_ROWS-i-1][i] == TYPE_CROSS) {
+			countCross++;
+		} else if (gameBoard[NUM_ROWS-i-1][i] == TYPE_EMPTY) {
+			countEmpty++;
+		}
+	}
+	if (countCross == 2 && countEmpty == 1) {
+		if (gameBoard[2][0] == TYPE_EMPTY) {
+			return 7;
+		} else if (gameBoard[1][1] == TYPE_EMPTY) {
+			return 5;
+		} else {
+			return 3;
+		}
+	}
+	
+	//Play based on weights
+	//Check if center is empty
+	if (gameBoard[1][1] == TYPE_EMPTY) {
+		return 5;
+	}
+	
+	//Check for corners
+	NSMutableArray *freeCorners = [NSMutableArray arrayWithCapacity:4];
+	if (gameBoard[0][0] == TYPE_EMPTY) {
+		[freeCorners addObject:[NSNumber numberWithInt:1]];
+	}
+	
+	if (gameBoard[0][2] == TYPE_EMPTY) {
+		[freeCorners addObject:[NSNumber numberWithInt:3]];
+	}
+	
+	if (gameBoard[2][0] == TYPE_EMPTY) {
+		[freeCorners addObject:[NSNumber numberWithInt:7]];
+	}
+	
+	if (gameBoard[2][2] == TYPE_EMPTY) {
+		[freeCorners addObject:[NSNumber numberWithInt:9]];
+	}
+	
+	if ([freeCorners count]) {
+		int indexToReturn = arc4random() % [freeCorners count];
+		return [[freeCorners objectAtIndex:indexToReturn] intValue];
+	}
+	
+	//Check for edges
+	NSMutableArray *freeEdges = [NSMutableArray arrayWithCapacity:4];
+	if (gameBoard[0][1] == TYPE_EMPTY) {
+		[freeEdges addObject:[NSNumber numberWithInt:2]];
+	}
+	
+	if (gameBoard[1][0] == TYPE_EMPTY) {
+		[freeEdges addObject:[NSNumber numberWithInt:4]];
+	}
+	
+	if (gameBoard[1][2] == TYPE_EMPTY) {
+		[freeEdges addObject:[NSNumber numberWithInt:6]];
+	}
+	
+	if (gameBoard[2][1] == TYPE_EMPTY) {
+		[freeEdges addObject:[NSNumber numberWithInt:8]];
+	}
+	
+	if ([freeEdges count]) {
+		int indexToReturn = arc4random() % [freeEdges count];
+		return [[freeEdges objectAtIndex:indexToReturn] intValue];
+	}
+	
+	return 0;
+}
+
+-(int) blockOpponentWinningMove {
 	//Block winning row
+	int countCross, countEmpty;
 	for (int i=0; i<NUM_ROWS; i++) {
 		countCross = 0;
 		countEmpty = 0;
@@ -159,79 +254,6 @@
 			return 9;
 		}
 	}
-	
-	// Check for up diagonal win
-	countCross = 0;
-	countEmpty = 0;
-	for (int i=0; i<NUM_ROWS; i++) {
-		if (gameBoard[NUM_ROWS-i-1][i] == TYPE_CROSS) {
-			countCross++;
-		} else if (gameBoard[NUM_ROWS-i-1][i] == TYPE_EMPTY) {
-			countEmpty++;
-		}
-	}
-	if (countCross == 2 && countEmpty == 1) {
-		if (gameBoard[2][0] == TYPE_EMPTY) {
-			return 7;
-		} else if (gameBoard[1][1] == TYPE_EMPTY) {
-			return 5;
-		} else {
-			return 3;
-		}
-	}
-	
-	//Play Random
-	//Check if center is empty
-	if (gameBoard[1][1] == TYPE_EMPTY) {
-		return 5;
-	}
-	
-	//Check for corners
-	NSMutableArray *freeCorners = [NSMutableArray arrayWithCapacity:4];
-	if (gameBoard[0][0] == TYPE_EMPTY) {
-		[freeCorners addObject:[NSNumber numberWithInt:1]];
-	}
-	
-	if (gameBoard[0][2] == TYPE_EMPTY) {
-		[freeCorners addObject:[NSNumber numberWithInt:3]];
-	}
-	
-	if (gameBoard[2][0] == TYPE_EMPTY) {
-		[freeCorners addObject:[NSNumber numberWithInt:7]];
-	}
-	
-	if (gameBoard[2][2] == TYPE_EMPTY) {
-		[freeCorners addObject:[NSNumber numberWithInt:9]];
-	}
-	
-	if ([freeCorners count]) {
-		int indexToReturn = arc4random() % [freeCorners count];
-		return [[freeCorners objectAtIndex:indexToReturn] intValue];
-	}
-	
-	//Check for edges
-	NSMutableArray *freeEdges = [NSMutableArray arrayWithCapacity:4];
-	if (gameBoard[0][1] == TYPE_EMPTY) {
-		[freeEdges addObject:[NSNumber numberWithInt:2]];
-	}
-	
-	if (gameBoard[1][0] == TYPE_EMPTY) {
-		[freeEdges addObject:[NSNumber numberWithInt:4]];
-	}
-	
-	if (gameBoard[1][2] == TYPE_EMPTY) {
-		[freeEdges addObject:[NSNumber numberWithInt:6]];
-	}
-	
-	if (gameBoard[2][1] == TYPE_EMPTY) {
-		[freeEdges addObject:[NSNumber numberWithInt:8]];
-	}
-	
-	if ([freeEdges count]) {
-		int indexToReturn = arc4random() % [freeEdges count];
-		return [[freeEdges objectAtIndex:indexToReturn] intValue];
-	}
-	
 	return 0;
 }
 
