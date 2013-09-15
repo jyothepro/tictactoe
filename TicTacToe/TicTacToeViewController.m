@@ -8,6 +8,7 @@
 
 #import "TicTacToeViewController.h"
 #import "TicTacToeGameModel.h"
+#import "MBProgressHUD.h"
 
 @interface TicTacToeViewController ()
 	@property(nonatomic, retain) NSMutableArray *boardComponents;
@@ -118,7 +119,7 @@
 			
 		}
 		
-		
+		UIAlertView *message;
 		switch ([_game gameState]) {
 			case STATE_CROSS_TURN:
 				self.gameState.text = @"Player's Turn";
@@ -132,14 +133,33 @@
 				
 			case STATE_CROSS_WON:
 				self.gameState.text = @"Player won the game";
+				message = [[UIAlertView alloc] initWithTitle:@"Player Won"
+																  message:@"Good Job!!!"
+																 delegate:nil
+														cancelButtonTitle:@"OK"
+														otherButtonTitles:nil];
+				[message show];
+				
 				break;
 				
 			case STATE_NOUGHT_WON:
 				self.gameState.text = @"iPhone won the game";
+				message = [[UIAlertView alloc] initWithTitle:@"iPhone Won"
+													 message:@"Better luck next time"
+													delegate:nil
+										   cancelButtonTitle:@"OK"
+										   otherButtonTitles:nil];
+				[message show];
 				break;
 				
 			case STATE_TIE:
 				self.gameState.text = @"Its a tie, try again!";
+				message = [[UIAlertView alloc] initWithTitle:@"Its a Tie"
+													 message:@"No donut for you"
+													delegate:nil
+										   cancelButtonTitle:@"OK"
+										   otherButtonTitles:nil];
+				[message show];
 				break;
 				
 				
