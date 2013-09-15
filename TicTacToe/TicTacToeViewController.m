@@ -60,13 +60,17 @@
 
 -(void)imageTapped:(UITapGestureRecognizer *)gr {
 	NSLog(@"Image was touched %d", gr.view.tag);
+	[self processGameAction:gr.view.tag];
+}
+
+-(void) processGameAction:(int) pos {
 	BOOL canAccept = NO;
 	GameState curState = [_game gameState];
-	switch (gr.view.tag) {
+	switch (pos) {
 		case 1:
 			canAccept = [_game playerPressedRow:0 column:0];
 			break;
-		
+			
 		case 2:
 			canAccept = [_game playerPressedRow:0 column:1];
 			break;
@@ -104,7 +108,7 @@
 	}
 	
 	if (canAccept) {
-		UIImageView *view = (UIImageView *)gr.view;
+		UIImageView *view = [_boardComponents objectAtIndex:(pos-1)];
 		view.userInteractionEnabled = NO;
 		if (curState == STATE_CROSS_TURN) {
 			[view setImage:[UIImage imageNamed:@"cross.png"]];
@@ -119,9 +123,11 @@
 			case STATE_CROSS_TURN:
 				self.gameState.text = @"Player's Turn";
 				break;
-			
+				
 			case STATE_NOUGHT_TURN:
 				self.gameState.text = @"iPhone's Turn";
+				int move = [_game iPhoneMove];
+				[self processGameAction:move];
 				break;
 				
 			case STATE_CROSS_WON:
@@ -140,11 +146,8 @@
 			default:
 				break;
 		}
-
+		
 	}
-	
-
-	
 }
 
 - (void)didReceiveMemoryWarning {

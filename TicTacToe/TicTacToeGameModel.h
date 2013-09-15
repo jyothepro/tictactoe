@@ -34,5 +34,6 @@ typedef enum {
 - (IconType) getMarkInRow:(int) aRow column:(int) aColumn;
 - (BOOL) playerPressedRow:(int) aRow column:(int) aColumn;
 - (BOOL) resetBoard;
+- (int) iPhoneMove;
 
 @end
