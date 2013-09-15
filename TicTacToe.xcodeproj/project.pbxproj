@@ -15,6 +15,8 @@
 		321FB9F417E4FC8200E6F465 /* nought.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9F217E4FC8200E6F465 /* nought.png */; };
 		321FB9F517E4FC8200E6F465 /* nought@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9F317E4FC8200E6F465 /* nought@2x.png */; };
 		321FB9F817E5371F00E6F465 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321FB9F717E5371F00E6F465 /* Crashlytics.framework */; };
+		321FB9FF17E540F300E6F465 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9FD17E540F300E6F465 /* logo@2x.png */; };
+		321FBA0017E540F300E6F465 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 321FB9FE17E540F300E6F465 /* logo.png */; };
 		32FCED7E17E3FB4C00F1CBC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FCED7D17E3FB4C00F1CBC4 /* UIKit.framework */; };
 		32FCED8017E3FB4C00F1CBC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FCED7F17E3FB4C00F1CBC4 /* Foundation.framework */; };
 		32FCED8217E3FB4C00F1CBC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FCED8117E3FB4C00F1CBC4 /* CoreGraphics.framework */; };
@@ -38,6 +40,8 @@
 		321FB9F217E4FC8200E6F465 /* nought.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nought.png; sourceTree = "<group>"; };
 		321FB9F317E4FC8200E6F465 /* nought@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nought@2x.png"; sourceTree = "<group>"; };
 		321FB9F717E5371F00E6F465 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		321FB9FD17E540F300E6F465 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		321FB9FE17E540F300E6F465 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		32FCED7A17E3FB4C00F1CBC4 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32FCED7D17E3FB4C00F1CBC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		32FCED7F17E3FB4C00F1CBC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +137,8 @@
 			children = (
 				32FCED8517E3FB4C00F1CBC4 /* TicTacToe-Info.plist */,
 				32FCED8617E3FB4C00F1CBC4 /* InfoPlist.strings */,
+				321FB9FD17E540F300E6F465 /* logo@2x.png */,
+				321FB9FE17E540F300E6F465 /* logo.png */,
 				32FCED8917E3FB4C00F1CBC4 /* main.m */,
 				32FCED8B17E3FB4C00F1CBC4 /* TicTacToe-Prefix.pch */,
 				32FCED8F17E3FB4C00F1CBC4 /* Default.png */,
@@ -206,6 +212,8 @@
 				321FB9F117E4FAFC00E6F465 /* cross@2x.png in Resources */,
 				321FB9F417E4FC8200E6F465 /* nought.png in Resources */,
 				321FB9F517E4FC8200E6F465 /* nought@2x.png in Resources */,
+				321FB9FF17E540F300E6F465 /* logo@2x.png in Resources */,
+				321FBA0017E540F300E6F465 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
