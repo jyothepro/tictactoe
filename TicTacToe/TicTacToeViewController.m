@@ -36,7 +36,6 @@
 	_boardComponents = [NSMutableArray arrayWithObjects:img11, img12, img13, img21, img22, img23, img31, img32, img33, nil];
 	_game = [TicTacToeGameModel new];
 	[self configureView];
-	[self configureGame];
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -67,7 +66,6 @@
 		default:
 			break;
 	}
-	
 }
 
 -(void)showSkillLevelActionSheet {
@@ -98,10 +96,6 @@
 		[view setImage:[UIImage imageNamed:@""]];
 		[self addTouchToView:view];
 	}
-}
-
--(void) configureGame {
-	
 }
 
 -(void)imageTapped:(UITapGestureRecognizer *)gr {
@@ -207,11 +201,9 @@
 				[message show];
 				break;
 				
-				
 			default:
 				break;
 		}
-		
 	}
 }
 
@@ -221,7 +213,6 @@
 }
 
 - (IBAction)startNewGame:(id)sender {
-	[self configureGame];
 	[self configureView];
 	[_game resetBoard];
 }
